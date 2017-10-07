@@ -1,4 +1,6 @@
 #!/usr/bin/python
+import socket
+import socketserver
 
 
 class Frog(object):
@@ -10,7 +12,7 @@ class Frog(object):
         return self.name
 
     def interact_with(self, obstacle):
-        print('{} the forg encounters {} and {}!'.format(self,
+        print('{} the forg encounters {} and {}!'.format(self, 
             obstacle, obstacle.action()))
 
 
@@ -47,8 +49,8 @@ class Wizard:
         return self.name
 
     def interact_with(self, objstacle):
-        print('{} the Wizard battles against {} and {} !'.format(self, objstacle,
-            objstacle.action()))
+        print('{} the Wizard battles against {} and {} !'.format(self,
+            bjstacle,objstacle.action()))
 
 
 class Ork:
