@@ -15,6 +15,19 @@ class People(object):
     def __str__(self):
         return '{} is {} year old.'.format(self.name, self.age)
 
+#Director
+class Director(object):
+
+    def __init__(self):
+        self.builder = None
+
+    def construct_product(self):
+        self.builder.new_product()
+        self.builder.set_name()
+        self.builder.set_age()
+
+    def get_product(self):
+        return self.builder.product
 
 # Abstrace Builder
 class AbstaceBuilder(object):
@@ -30,20 +43,6 @@ class AbstaceBuilder(object):
 
     def set_age(self, age):
         raise NotImplementedError
-
-#Director
-class Director(object):
-
-    def __init__(self):
-        self.builder = None
-
-    def construct_product(self):
-        self.builder.new_product()
-        self.builder.set_name()
-        self.builder.set_age()
-
-    def get_product(self):
-        return self.builder.product
 
 
 class XiaoMingBuilder(AbstaceBuilder):
