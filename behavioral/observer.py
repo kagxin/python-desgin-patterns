@@ -1,12 +1,13 @@
 """
 observer
 """
-import logging
+
 
 class Observer:
 
     def notify(self, pub):
         raise NotImplementedError
+
 
 class Publisher:
 
@@ -37,8 +38,6 @@ class JustPublisher(Publisher):
         self.name = name
         self.__data = None
 
-    # def __str__(self):
-    #     return
     def get_data(self):
         return self.__data
 
@@ -50,10 +49,13 @@ class JustPublisher(Publisher):
 
 
 class PrintObserver(Observer):
+
     def notify(self, pub):
         print('{}:{}'.format(self.__class__.__name__, pub.data))
 
+
 class Print2Observer(Observer):
+
     def notify(self, pub):
         print('{}:{}'.format(self.__class__.__name__, pub.data))
 
